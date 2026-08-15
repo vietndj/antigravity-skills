@@ -55,3 +55,19 @@ Khi người dùng gửi một đường link video (Instagram Reels, TikTok, Yo
   - Mỗi đầu mục 1, 2, 3 hoặc dấu `•` BẮT BUỘC nằm riêng một dòng.
   - Bảng 3 cột nén gọn với `<br/>` xuống dòng nội bộ, cột 2 BẮT BUỘC nhúng ảnh Keyframe minh họa trực tiếp `![Ảnh](file://...)`.
   - Cung cấp link Thư Mục Google Drive và Link xem trực tiếp tệp PDF.
+
+## 7. TỰ ĐỘNG BỔ SUNG VÀO TRUNG TÂM TRA CỨU ĐIỆN ẢNH & ĐỒNG BỘ GITHUB PAGES
+- Ngay sau khi hoàn thành đóng gói và upload Google Drive, Agent BẮT BUỘC thực thi script cập nhật tự động để bổ sung video mới vào thư viện tra cứu điện ảnh ([scene.html](file:///D:/CODE%20on%20window/vietndj.github.io/scene.html) & [TRUNG_TAM_TRA_CUU_DIEN_ANH.html](file:///D:/CODE%20on%20window/TRUNG_TAM_TRA_CUU_DIEN_ANH.html)) và tự động đồng bộ lên GitHub Pages:
+  ```bash
+  python "d:\CODE on window\Quản gia\auto_add_to_portal.py" \
+    --package-dir "[Đường_dẫn_thư_mục_gói_vừa_tạo]" \
+    --title "[Tiêu_đề_tiếng_Việt_mô_tả_nội_dung_chính_và_kỹ_thuật_cốt_lõi]" \
+    --creator "@[Tên_kênh_tác_giả]" \
+    --desc "[Mô_tả_ngắn_gọn_tiếng_Việt_về_góc_quay_ánh_sáng_và_cách_chuyển_cảnh]" \
+    --tech "[Các_kỹ_thuật_trọng_tâm_ví_dụ_Match_Cut_180_Shutter_Parallax]" \
+    --ig-url "[Link_Instagram_gốc]" \
+    --gdrive-folder "[Link_Google_Drive_Folder]" \
+    --gdrive-pdf "[Link_Google_Drive_PDF]"
+  ```
+  *(Script sẽ tự động cập nhật danh sách JSON, build lại tệp HTML độc lập và gọi GitHub REST API để đưa lên online ngay lập tức)*.
+
