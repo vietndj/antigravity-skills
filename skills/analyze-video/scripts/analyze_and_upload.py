@@ -283,16 +283,32 @@ h1 {{ font-size: 20px; color: #f8fafc; margin-top: 8px; }}
 <head>
 <meta charset="UTF-8">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@font-face {{
+    font-family: 'SVN-Aeonik';
+    src: url('file:///d:/CODE%20on%20window/Qu%E1%BA%A3n%20gia/fonts/SVN-AEONIK-REGULAR.TTF') format('truetype');
+    font-weight: 400;
+}}
+@font-face {{
+    font-family: 'SVN-Aeonik';
+    src: url('file:///d:/CODE%20on%20window/Qu%E1%BA%A3n%20gia/fonts/SVN-AEONIK-BOLD.TTF') format('truetype');
+    font-weight: 700;
+}}
+@font-face {{
+    font-family: 'SVN-Acta';
+    src: url('file:///d:/CODE%20on%20window/Qu%E1%BA%A3n%20gia/fonts/SVN-Acta-Bold.ttf') format('truetype');
+    font-weight: 700;
+}}
 @page {{ size: A4 portrait; margin: 12mm; }}
-* {{ box-sizing: border-box; -webkit-print-color-adjust: exact !important; }}
-body {{ font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #0f172a; font-size: 13px; line-height: 1.5; }}
+* {{ box-sizing: border-box; -webkit-print-color-adjust: exact !important; font-family: 'SVN-Aeonik', sans-serif !important; }}
+body {{ font-family: 'SVN-Aeonik', sans-serif; color: #0f172a; font-size: 13px; line-height: 1.5; }}
+h1, h2, .header h1 {{ font-family: 'SVN-Aeonik', 'SVN-Acta', sans-serif !important; }}
 .header {{ background: #0f172a; border-radius: 12px; padding: 20px; color: #fff; margin-bottom: 16px; }}
 .badge {{ background: #f59e0b; color: #0f172a; font-weight: 800; font-size: 11px; padding: 4px 8px; border-radius: 4px; }}
 h1 {{ font-size: 20px; color: #f8fafc; margin-top: 8px; }}
 .shot-card {{ border: 1px solid #e2e8f0; border-radius: 10px; padding: 12px; margin-bottom: 12px; display: flex; gap: 14px; page-break-inside: avoid; }}
-.img-box {{ width: 130px; height: 231px; background: #000; border-radius: 6px; overflow: hidden; }}
-.img-box img {{ width: 100%; height: 100%; object-fit: cover; }}
+.img-box {{ width: 120px; aspect-ratio: 9/16; background: #000; border-radius: 6px; overflow: hidden; flex-shrink: 0; }}
+.img-box img {{ width: 100%; height: 100%; object-fit: cover; display: block; }}
+.trans-img {{ max-width: 440px; width: auto; height: auto; max-height: 180px; object-fit: contain; border-radius: 6px; display: block; margin: 6px auto; }}
 .info {{ flex: 1; }}
 </style>
 </head>

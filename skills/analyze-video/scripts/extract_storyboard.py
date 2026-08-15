@@ -127,20 +127,38 @@ def generate_pdf_report(meta, frames, output_dir, analysis_data=None):
 <meta charset="UTF-8">
 <title>Báo Cáo Phân Tích Storyboard Video</title>
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+    @font-face {{
+        font-family: 'SVN-Aeonik';
+        src: url('file:///d:/CODE%20on%20window/Qu%E1%BA%A3n%20gia/fonts/SVN-AEONIK-REGULAR.TTF') format('truetype');
+        font-weight: 400;
+    }}
+    @font-face {{
+        font-family: 'SVN-Aeonik';
+        src: url('file:///d:/CODE%20on%20window/Qu%E1%BA%A3n%20gia/fonts/SVN-AEONIK-BOLD.TTF') format('truetype');
+        font-weight: 700;
+    }}
+    @font-face {{
+        font-family: 'SVN-Acta';
+        src: url('file:///d:/CODE%20on%20window/Qu%E1%BA%A3n%20gia/fonts/SVN-Acta-Bold.ttf') format('truetype');
+        font-weight: 700;
+    }}
     
     * {{
         box-sizing: border-box;
         margin: 0;
         padding: 0;
+        font-family: 'SVN-Aeonik', sans-serif !important;
     }}
     body {{
-        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-family: 'SVN-Aeonik', sans-serif;
         color: #0f172a;
         background: #f8fafc;
         padding: 32px;
         line-height: 1.5;
         -webkit-print-color-adjust: exact;
+    }}
+    h1, h2, .section-title {{
+        font-family: 'SVN-Aeonik', 'SVN-Acta', sans-serif !important;
     }}
     .header {{
         background: #ffffff;

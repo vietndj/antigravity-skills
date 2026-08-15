@@ -30,7 +30,11 @@ Khi người dùng gửi một đường link video (Instagram Reels, TikTok, Yo
 
 ## 4. XUẤT BẢN BÁO CÁO PHÂN TÍCH PDF QUA CHROME HEADLESS & BÁO CÁO HTML TƯƠNG TÁC CAO
 - **BẮT BUỘC**: Tuyệt đối không dùng `xhtml2pdf` cũ. Luôn luôn sử dụng **Headless Chrome / Edge CLI** (`--headless=new --disable-gpu --print-to-pdf="..." --no-pdf-header-footer`) để render từ HTML sang PDF.
-- **BẮT BUỘC nhúng font chuẩn tiếng Việt**: Trong HTML luôn có thẻ `<meta charset="UTF-8">` và `@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap')`.
+- **BẮT BUỘC CHUẨN FONT DỰ ÁN (CHỈ DÙNG SVN-ACTA & SVN-AEONIK)**:
+  - **Font Tiêu Đề / Điểm Nhấn (Heading / Display / Cover Title)**: Sử dụng **`'SVN-Acta', 'SVN-Aeonik', serif`** (font serif điện ảnh sang trọng, chuẩn 100% tiếng Việt) hoặc **`'SVN-Aeonik', sans-serif`** (cho phong cách hiện đại).
+  - **Font Thân Bài / Nội Dung / Bảng Biểu (Body / Metadata / Tables / Micro text)**: Sử dụng **`'SVN-Aeonik', sans-serif`** (sans-serif sắc nét, độ tương phản cao, chuẩn 100% tiếng Việt).
+  - **TUYỆT ĐỐI CẤM**: Không sử dụng các font Google Fonts hay font ngoại lai thiếu dấu tiếng Việt (như `Plus Jakarta Sans`, `Inter`, `Roboto`, `GT-Sectra` không dấu) vì sẽ gây hiện tượng **lỗi chắp vá font** (các ký tự có dấu như *Ệ, Ậ, Ự, Ờ, Ở* bị nhảy sang font mặc định Times New Roman).
+  - **BẮT BUỘC nhúng bộ font cục bộ `@font-face`**: Trong thẻ `<style>` của file HTML, luôn nhúng trực tiếp bộ font từ thư mục font dự án (`d:\CODE on window\Quản gia\fonts\fonts.css` hoặc Base64 `@font-face`) để đảm bảo Headless Chrome/Edge xuất PDF **100% chuẩn sắc nét, không bao giờ lỗi font dù offline hay online**.
 - **BẮT BUỘC CHỐNG BẸT / MÉO ẢNH (ASPECT RATIO PRESERVATION)**:
   - Tuyệt đối **KHÔNG gán cứng cặp thuộc tính `width="..." height="..."`** trên thẻ `<img>` (đặc biệt cấm `width="340" height="150"` trên ảnh chuyển cảnh hoặc `width="110" height="195"` cứng).
   - **Ảnh Keyframe Shot**: Định dạng qua CSS `.shot-thumb { width: 114px; height: auto; aspect-ratio: 9/16; object-fit: cover; border-radius: 6px; }`.
